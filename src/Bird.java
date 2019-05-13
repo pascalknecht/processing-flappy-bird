@@ -4,7 +4,11 @@ import processing.core.PImage;
 class Bird {
     private PApplet p;
 
-    public int x, y;
+    public float x, y;
+
+    float gravity = 10f;
+
+    float speed = 10;
 
     private int birdHeight = 50;
 
@@ -24,11 +28,11 @@ class Bird {
         // Scale the bird to have a height of 50
         int aspect = birdHeight / image.height;
         p.image(image, x, y, image.width * aspect, birdHeight);
-        x += 20;
-        y += 20;
+        y = y + speed;
+        speed = speed + gravity;
     }
 
     void jump() {
-        this.y -= 50;
+        speed = -40f;
     }
 }

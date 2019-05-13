@@ -32,13 +32,20 @@ public class MainApplet extends PApplet {
     @Override
     public void draw() {
         playGround.draw();
+        playGround.d += 100;
     }
 
     @Override
     public void keyPressed(KeyEvent event) {
         // If the spacebar is pressed down
         if (event.getKeyCode() == 32) {
-            //this.bird.jump();
+            if (playGround.isPlaying) {
+                playGround.bird.jump();
+            }
+            else {
+                playGround = new Contain(this, canvasWidth, canvasHeight);
+                playGround.setup();
+            }
         }
     }
 }

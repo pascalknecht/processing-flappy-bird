@@ -8,9 +8,11 @@ import java.util.List;
 
 class Contain {
 
-    private Bird bird;
+    public Bird bird;
 
     private List<Pipe> pipes = new ArrayList<>();
+
+    public boolean isPlaying = true;
 
     PImage background;
 
@@ -42,9 +44,12 @@ class Contain {
         this.bird.setup();
     }
 
-    void draw(){
-        if( p < d ){ p++; }
-        if( p > d ){ p--; }
+    void draw() {
+        if (!isPlaying) {
+            return;
+        }
+
+        applet.clear();
         pg.beginDraw();
         pg.background(255);
         pg.noStroke();
@@ -77,6 +82,11 @@ class Contain {
 
     void gameOver() {
         PImage gameOver = applet.loadImage("gameover.png");
-        applet.image(gameOver, canvasWidth / 2, canvasHeight / 2);
+        applet.image(gameOver, canvasWidth / 2 - gameOver.width, canvasHeight / 2 - gameOver.height);
+        isPlaying = false;
+    }
+
+    void stop() {
+        this.isPlaying = false;
     }
 }
