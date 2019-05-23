@@ -33,6 +33,6 @@ class Bird {
     }
 
     void jump() {
-        speed = -40f;
+        speed = -20f;
     }
 }

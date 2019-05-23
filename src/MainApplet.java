@@ -1,9 +1,5 @@
-
 import processing.core.*;
 import processing.event.KeyEvent;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainApplet extends PApplet {
 
@@ -19,8 +15,6 @@ public class MainApplet extends PApplet {
     @Override
     public void settings() {
         size(canvasWidth, canvasHeight);
-
-        //fullScreen();
     }
 
     @Override

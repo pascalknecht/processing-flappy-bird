@@ -1,5 +1,4 @@
 import processing.core.PApplet;
-import processing.core.PConstants;
 import processing.core.PImage;
 import java.util.Random;
 
@@ -13,7 +12,6 @@ class Pipe {
     Pipe(PApplet p, int x, String type){
         this.p = p;
         this.x = x;
-
 
         pipeHeight = randBetween(300, 500);
     }
@@ -30,6 +28,9 @@ class Pipe {
     }
 
     void draw() {
+        if(x >= 0){
+            x -= 10;
+        }
         p.image(image_top, x, 0, 65, p.displayHeight - pipeHeight - verticalSpacingBetweenPipes);
         p.image(image_bottom, x, p.displayHeight - pipeHeight, 65, pipeHeight);
     }
