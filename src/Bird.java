@@ -1,26 +1,26 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+// This class represents the bird
 class Bird {
-    private PApplet p;
 
     public float x, y;
 
-    float gravity = 10f;
-
-    float speed = 10;
-
+    private PApplet p;
+    private float gravity = 1.5f;
+    private float speed = 2;
     private int birdHeight = 50;
-
-    PImage image;
+    private PImage image;
 
     Bird(PApplet p){
         this.p = p;
     }
 
     void setup() {
+        // Load the image for the bird
         image = p.loadImage("bird.png");
-        y = p.displayHeight / 2 - birdHeight / 2;
+
+        y = 250;
         x = 50;
     }
 
@@ -33,6 +33,10 @@ class Bird {
     }
 
     void jump() {
-        speed = -20f;
+        speed = -15f;
+    }
+
+    void fall(){
+        y =-10;
     }
 }

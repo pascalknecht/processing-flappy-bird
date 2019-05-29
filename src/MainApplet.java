@@ -5,8 +5,8 @@ public class MainApplet extends PApplet {
 
     Contain playGround;
 
-    int canvasWidth = 1920;
-    int canvasHeight = 1080;
+    int canvasWidth = 500;
+    int canvasHeight = 700;
 
     public static void main(String args[]) {
         PApplet.main("MainApplet");
