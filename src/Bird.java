@@ -7,7 +7,7 @@ class Bird {
     public float x, y;
 
     private PApplet p;
-    private float gravity = 1.5f;
+    private float gravity = 1.2f;
     private float speed = 2;
     private int birdHeight = 50;
     private PImage image;
